@@ -31,6 +31,10 @@ module.exports = {
           'warn'
         ]
       }
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
     ]
   }
 };

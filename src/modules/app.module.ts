@@ -13,11 +13,11 @@ import { AppService } from './app.service';
     StatusMonitorModule.forRoot(),
     ThrottlerModule.forRoot({
       ttl: 60,
-      limit: 100,
-    }),
+      limit: 100
+    })
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService]
 })
 
 // eslint-disable-next-line import/prefer-default-export
