@@ -5,6 +5,7 @@ import { LoggerModule } from 'nestjs-pino';
 import { StatusMonitorModule } from 'nestjs-status-monitor';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { Utils } from '../helpers/utils';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { AppService } from './app.service';
     })
   ],
   controllers: [AppController],
-  providers: [AppService]
+  providers: [AppService, Utils]
 })
 
 // eslint-disable-next-line import/prefer-default-export
