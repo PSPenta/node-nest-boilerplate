@@ -1,13 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import * as compression from 'compression';
-import * as helmet from 'helmet';
+import helmet from 'helmet';
 import { Logger } from 'nestjs-pino';
 import { AppModule } from './modules/app.module';
 
-async function bootstrap() {
+(async () => {
   const app = await NestFactory.create(AppModule, {
     cors: true,
+    // eslint-disable-next-line @typescript-eslint/comma-dangle
     bufferLogs: true
   });
 
@@ -25,5 +26,4 @@ async function bootstrap() {
   SwaggerModule.setup('api/api-docs', app, document);
 
   await app.listen(process.env.HTTP_PORT);
-}
-bootstrap();
+})();

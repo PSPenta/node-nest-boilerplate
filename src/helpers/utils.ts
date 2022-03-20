@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/comma-dangle */
+/* eslint-disable operator-linebreak */
 /* eslint-disable class-methods-use-this */
 import { ResponseObj } from './utils.interface';
 

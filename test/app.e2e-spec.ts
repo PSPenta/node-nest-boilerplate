@@ -8,6 +8,7 @@ describe('AppController (e2e)', () => {
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
+      // eslint-disable-next-line @typescript-eslint/comma-dangle
       imports: [AppModule]
     }).compile();
 

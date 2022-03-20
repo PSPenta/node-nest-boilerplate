@@ -8,6 +8,7 @@ describe('AppController', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [AppController],
+      // eslint-disable-next-line @typescript-eslint/comma-dangle
       providers: [AppService]
     }).compile();
 
