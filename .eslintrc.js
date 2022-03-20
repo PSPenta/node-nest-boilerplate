@@ -22,19 +22,38 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    'no-console': [
-      'error',
-      {
-        'allow': [
-          'error',
-          'info',
-          'warn'
-        ]
-      }
-    ],
     "comma-dangle": [
       "error",
       "never"
+    ],
+    // "indent": [
+    //   "error",
+    //   2
+    // ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "error",
+          "info",
+          "warn"
+        ]
+      }
+    ],
+    "no-multi-spaces": [
+      "error"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
     ]
   }
 };
