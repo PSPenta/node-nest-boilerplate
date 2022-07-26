@@ -19,7 +19,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "update:packages": "npm install --save-dev npm-check-updates && ncu -u && npm update"
+    "update:packages": "npm install --save-dev npm-check-updates && ncu -u && npm update && npm uninstall npm-check-updates && npm i"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.5",
