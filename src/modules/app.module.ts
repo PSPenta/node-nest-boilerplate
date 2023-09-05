@@ -15,8 +15,8 @@ import { Utils } from '../helpers/utils';
     StatusMonitorModule.forRoot(),
     ThrottlerModule.forRoot([
       {
-        ttl: 60,
-        limit: 100
+        ttl: parseInt(process.env.RATE_LIMIT_TTL, 10) || 60,
+        limit: parseInt(process.env.RATE_TOTAL_LIMIT, 10) || 100
       }
     ])
   ],
