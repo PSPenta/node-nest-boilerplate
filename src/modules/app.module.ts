@@ -13,10 +13,12 @@ import { Utils } from '../helpers/utils';
     LoggerModule.forRoot(),
     ConfigModule.forRoot(),
     StatusMonitorModule.forRoot(),
-    ThrottlerModule.forRoot({
-      ttl: 60,
-      limit: 100
-    })
+    ThrottlerModule.forRoot([
+      {
+        ttl: 60,
+        limit: 100
+      }
+    ])
   ],
   controllers: [AppController],
   providers: [AppService, Utils]
