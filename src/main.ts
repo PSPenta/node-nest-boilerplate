@@ -8,7 +8,6 @@ import { AppModule } from './modules/app.module';
 (async () => {
   const app = await NestFactory.create(AppModule, {
     cors: true,
-    // eslint-disable-next-line @typescript-eslint/comma-dangle
     bufferLogs: true
   });
 
@@ -25,5 +24,5 @@ import { AppModule } from './modules/app.module';
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/api-docs', app, document);
 
-  await app.listen(process.env.HTTP_PORT);
+  await app.listen(process.env.HTTP_PORT || 8090);
 })();

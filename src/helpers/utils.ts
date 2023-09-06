@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/comma-dangle */
-/* eslint-disable operator-linebreak */
-/* eslint-disable class-methods-use-this */
 import { ResponseObj } from './utils.interface';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -9,17 +6,17 @@ export class Utils {
     let flagDataExists;
     if (data === 0 ? '0' : data) {
       switch (data.constructor) {
-        case Object:
-          flagDataExists = !!Object.keys(data).length;
-          break;
+      case Object:
+        flagDataExists = !!Object.keys(data).length;
+        break;
 
-        case Array:
-          flagDataExists = !!data.length;
-          break;
+      case Array:
+        flagDataExists = !!data.length;
+        break;
 
-        default:
-          flagDataExists = true;
-          break;
+      default:
+        flagDataExists = true;
+        break;
       }
 
       if (flagDataExists) {
@@ -34,12 +31,12 @@ export class Utils {
     errMsg: string,
     successStatus?: boolean,
     data?: any,
-    paginated?: boolean
+    paginated?: boolean,
   ): any {
     const responseObj: ResponseObj = {
       success: successStatus || false,
       error: errMsg || null,
-      data: data || null
+      data: data || null,
     };
 
     if (errMsg) {
