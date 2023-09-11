@@ -1,3 +1,5 @@
+/* eslint-disable class-methods-use-this */
+/** ***************** TypeORM Setup ***************** */
 // import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 // export function databaseConfig(): TypeOrmModuleOptions {
@@ -39,4 +41,34 @@
 //     // entities: [PayoutSummaryUploadEntity]
 //     entities: [`${__dirname}/**/*.entity{.ts,.js}`]
 //   };
+// }
+
+/** ***************** Mongoose Setup ***************** */
+// import { Inject, Injectable, Request } from '@nestjs/common';
+// import { MongooseOptionsFactory, MongooseModuleOptions } from '@nestjs/mongoose';
+// import { REQUEST } from '@nestjs/core';
+// import * as fs from 'fs';
+
+// @Injectable()
+// export class MongoDBService implements MongooseOptionsFactory {
+//   constructor(@Inject(REQUEST) private readonly request: Request) {}
+
+//   createMongooseOptions(): MongooseModuleOptions {
+//     if (process.env.ENVIRONMENT === 'local.dev') {
+//       return {
+//         uri: process.env.MONGO_URL
+//       };
+//     }
+//     return {
+//       uri: process.env.MONGO_URL,
+//       ssl: Boolean(process.env.MONGO_SSL),
+//       minPoolSize: 10,
+//       maxPoolSize: 25,
+//       sslCA: String([
+//         fs.readFileSync(
+//           `${__dirname}/../../config/certificates/EnterpriseRootCA.cer`
+//         )
+//       ])
+//     };
+//   }
 // }

@@ -3,13 +3,16 @@ import { ConfigModule } from '@nestjs/config';
 import { LoggerModule } from 'nestjs-pino';
 import { ThrottlerModule } from '@nestjs/throttler';
 // eslint-disable-next-line max-len
-// import { TypeOrmModule } from '@nestjs/typeorm';                     // Run npm install --save @nestjs/typeorm typeorm mysql2
+// import { TypeOrmModule } from '@nestjs/typeorm';                     // Run npm i @nestjs/typeorm typeorm mysql2
+// eslint-disable-next-line max-len
+// import { MongooseModule } from '@nestjs/mongoose';                   // Run npm i @nestjs/mongoose mongoose
 import { StatusMonitorModule } from 'nestjs-status-monitor';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Utils } from '../helpers/utils';
-// import { databaseConfig } from '../configs/database.config';
+// import { databaseConfig } from '../configs/database.config';         // For TypeORM setup
+// import { MongoDBService } from '../configs/database.config';         // For Mongoose setup
 
 @Module({
   imports: [
@@ -23,6 +26,7 @@ import { Utils } from '../helpers/utils';
       }
     ])
     // TypeOrmModule.forRoot(databaseConfig())
+    // MongooseModule.forRootAsync({ useClass: MongoDBService })
   ],
   controllers: [AppController],
   providers: [AppService, Utils]
