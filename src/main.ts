@@ -24,5 +24,5 @@ import { AppModule } from './modules/app.module';
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/api-docs', app, document);
 
-  await app.listen(process.env.HTTP_PORT || 8090);
+  await app.listen(process.env.APP_PORT || 8090);
 })();
