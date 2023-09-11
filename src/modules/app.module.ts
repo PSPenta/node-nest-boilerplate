@@ -1,12 +1,15 @@
-/* eslint-disable @typescript-eslint/comma-dangle */
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { ThrottlerModule } from '@nestjs/throttler';
 import { LoggerModule } from 'nestjs-pino';
+import { ThrottlerModule } from '@nestjs/throttler';
+// eslint-disable-next-line max-len
+// import { TypeOrmModule } from '@nestjs/typeorm';                     // Run npm install --save @nestjs/typeorm typeorm mysql2
 import { StatusMonitorModule } from 'nestjs-status-monitor';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Utils } from '../helpers/utils';
+// import { databaseConfig } from '../configs/database.config';
 
 @Module({
   imports: [
@@ -19,10 +22,10 @@ import { Utils } from '../helpers/utils';
         limit: parseInt(process.env.RATE_TOTAL_LIMIT, 10) || 100
       }
     ])
+    // TypeOrmModule.forRoot(databaseConfig())
   ],
   controllers: [AppController],
   providers: [AppService, Utils]
 })
 
-// eslint-disable-next-line import/prefer-default-export
 export class AppModule {}

@@ -1,6 +1,7 @@
+/* eslint-disable class-methods-use-this */
+/* eslint-disable max-len */
 import { ResponseObj } from './utils.interface';
 
-// eslint-disable-next-line import/prefer-default-export
 export class Utils {
   checkIfDataExists(data: any): boolean {
     let flagDataExists;
@@ -31,12 +32,12 @@ export class Utils {
     errMsg: string,
     successStatus?: boolean,
     data?: any,
-    paginated?: boolean,
+    paginated?: boolean
   ): any {
     const responseObj: ResponseObj = {
       success: successStatus || false,
       error: errMsg || null,
-      data: data || null,
+      data: data || null
     };
 
     if (errMsg) {
@@ -50,13 +51,9 @@ export class Utils {
       responseObj.limit = data.limit;
       responseObj.totalPages = data.totalPages || data.pages;
       responseObj.hasPrevPage = data.hasPrevPage || data.page > 1;
-      responseObj.hasNextPage =
-        data.hasNextPage || !!(!data.page || data.page < data.pages);
-      responseObj.prevPage =
-        data.prevPage || (data.page > 1 ? data.page - 1 : null);
-      responseObj.nextPage =
-        data.nextPage ||
-        (!data.page || data.page < data.pages ? data.page || 2 : null);
+      responseObj.hasNextPage = data.hasNextPage || !!(!data.page || data.page < data.pages);
+      responseObj.prevPage = data.prevPage || (data.page > 1 ? data.page - 1 : null);
+      responseObj.nextPage = data.nextPage || (!data.page || data.page < data.pages ? data.page || 2 : null);
     } else {
       responseObj.data = data.docs || data;
     }
