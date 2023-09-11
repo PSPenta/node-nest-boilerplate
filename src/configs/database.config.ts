@@ -15,7 +15,7 @@
 
 // export function databaseReplicationConfig(): TypeOrmModuleOptions {
 //   return {
-//     type: 'mysql',
+//     type: process.env.DB_DIALECT,
 //     replication: {
 //       master: {
 //         host: process.env.DB_HOST_MASTER,
